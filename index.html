@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday bạn Hòa xinh gái </title>
+<title>Happy Birthday bạn Hòa xinh gái</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -14,9 +14,10 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(135deg,#fff5d7,#ffe6f0,#fff0f6);
+  background:linear-gradient(135deg,#fff3c4,#ffd6e8,#ffe9f3);
 }
 
+/* KHUNG ĐIỆN THOẠI */
 .phone{
   width:100%;
   max-width:420px;
@@ -24,11 +25,11 @@ body{
   border-radius:40px;
   overflow:hidden;
   position:relative;
-  box-shadow:0 30px 60px rgba(0,0,0,0.2);
-  background:white;
+  box-shadow:0 30px 70px rgba(0,0,0,0.25);
+  background:linear-gradient(180deg,#fff9e6,#fff0f5);
 }
 
-/* ENVELOPE */
+/* ===== PHONG BÌ ===== */
 .envelope{
   width:280px;
   height:190px;
@@ -41,7 +42,7 @@ body{
 }
 
 .envelope.hide{
-  transform:translate(-50%,200px);
+  transform:translate(-50%,220px);
   opacity:0;
 }
 
@@ -49,7 +50,7 @@ body{
   width:100%;
   height:100%;
   background:linear-gradient(135deg,#f7d046,#ffb6c1);
-  border-radius:20px;
+  border-radius:22px;
 }
 
 .seal{
@@ -68,14 +69,13 @@ body{
   font-size:22px;
   color:white;
   cursor:pointer;
-  box-shadow:0 0 25px rgba(255,215,0,0.8);
+  box-shadow:0 0 25px rgba(255,215,0,0.9);
 }
 
-/* SLIDESHOW */
+/* ===== SLIDESHOW ===== */
 .slideshow{
   position:absolute;
   inset:0;
-  background:black;
   opacity:0;
   transition:opacity 1s ease;
 }
@@ -87,15 +87,20 @@ body{
 .slide{
   position:absolute;
   inset:0;
-  background-size:cover;
-  background-position:center;
   opacity:0;
-  transition:opacity 1.5s ease-in-out;
-  animation:zoomAnim 8s ease forwards;
+  transition:opacity 1.8s ease-in-out;
 }
 
 .slide.active{
   opacity:1;
+}
+
+/* ẢNH */
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  animation:zoomAnim 8s ease forwards;
 }
 
 @keyframes zoomAnim{
@@ -106,7 +111,7 @@ body{
 /* CAPTION */
 .caption{
   position:absolute;
-  bottom:80px;
+  bottom:90px;
   width:100%;
   text-align:center;
   font-size:22px;
@@ -123,10 +128,10 @@ body{
   transform:translateY(0);
 }
 
-/* ICON EFFECT ẢNH ĐẦU */
+/* ICON ẢNH ĐẦU */
 .icon{
   position:absolute;
-  font-size:24px;
+  font-size:26px;
   animation:float 5s linear infinite;
 }
 
@@ -136,10 +141,10 @@ body{
   100%{transform:translateY(-120px); opacity:0;}
 }
 
-.icon1{left:20%; bottom:50px;}
-.icon2{left:40%; bottom:80px;}
-.icon3{left:60%; bottom:60px;}
-.icon4{left:75%; bottom:70px;}
+.icon1{left:20%; bottom:60px;}
+.icon2{left:40%; bottom:100px;}
+.icon3{left:60%; bottom:70px;}
+.icon4{left:75%; bottom:90px;}
 </style>
 </head>
 
@@ -147,57 +152,70 @@ body{
 
 <div class="phone">
 
+<!-- PHONG BÌ -->
 <div class="envelope" id="envelope">
   <div class="body-env"></div>
   <div class="seal" onclick="openShow()">H</div>
 </div>
 
+<!-- SLIDESHOW -->
 <div class="slideshow" id="slideshow">
-  <!-- ẢNH 1 -->
-  <div class="slide active" style="background-image:url('h1.jpg')">
-    <div class="caption">🎉 Happy Birthday Hòa 🎉</div>
 
+  <!-- ẢNH 1 -->
+  <div class="slide active">
+    <img src="h1.jpg">
+    <div class="caption">🎉 Happy Birthday Hòa 🎉</div>
     <div class="icon icon1">🎈</div>
     <div class="icon icon2">✨</div>
     <div class="icon icon3">🎂</div>
     <div class="icon icon4">💖</div>
   </div>
 
-  <div class="slide" style="background-image:url('h2.jpg')">
+  <div class="slide">
+    <img src="h2.jpg">
     <div class="caption">Tuổi mới thật nhiều niềm vui</div>
   </div>
 
-  <div class="slide" style="background-image:url('h3.jpg')">
+  <div class="slide">
+    <img src="h3.jpg">
     <div class="caption">Luôn giữ nụ cười rạng rỡ</div>
   </div>
 
-  <div class="slide" style="background-image:url('h4.jpg')">
+  <div class="slide">
+    <img src="h4.jpg">
     <div class="caption">Thành công trong mọi dự định</div>
   </div>
 
-  <div class="slide" style="background-image:url('h5.jpg')">
+  <div class="slide">
+    <img src="h5.jpg">
     <div class="caption">Hạnh phúc mỗi ngày</div>
   </div>
 
-  <div class="slide" style="background-image:url('h6.jpg')">
+  <div class="slide">
+    <img src="h6.jpg">
     <div class="caption">May mắn và bình an</div>
   </div>
 
-  <div class="slide" style="background-image:url('h7.jpg')">
+  <div class="slide">
+    <img src="h7.jpg">
     <div class="caption">Bay cao hơn nữa nhé</div>
   </div>
 
-  <div class="slide" style="background-image:url('h8.jpg')">
+  <div class="slide">
+    <img src="h8.jpg">
     <div class="caption">Luôn tỏa sáng theo cách riêng</div>
   </div>
 
-  <div class="slide" style="background-image:url('h9.jpg')">
+  <div class="slide">
+    <img src="h9.jpg">
     <div class="caption">Một hành trình mới bắt đầu</div>
   </div>
 
-  <div class="slide" style="background-image:url('h10.jpg')">
-    <div class="caption">Chúc fen một tuổi mới nha 💕</div>
+  <div class="slide">
+    <img src="h10.jpg">
+    <div class="caption">Chúc bạn một tuổi mới thật rực rỡ 💕</div>
   </div>
+
 </div>
 
 <audio id="music" src="audio.mp3"></audio>
@@ -243,5 +261,4 @@ music.addEventListener("ended",()=>{
 </script>
 
 </body>
-
 </html>
