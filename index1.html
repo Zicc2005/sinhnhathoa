@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Hòa</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#fff5d7,#ffe6f0,#fff0f6);
+}
+
+.phone{
+  width:100%;
+  max-width:420px;
+  aspect-ratio:9/16;
+  border-radius:40px;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 30px 60px rgba(0,0,0,0.2);
+  background:white;
+}
+
+/* ENVELOPE */
+.envelope{
+  width:280px;
+  height:190px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  transition:1s;
+  z-index:2;
+}
+
+.envelope.hide{
+  transform:translate(-50%,200px);
+  opacity:0;
+}
+
+.body-env{
+  width:100%;
+  height:100%;
+  background:linear-gradient(135deg,#f7d046,#ffb6c1);
+  border-radius:20px;
+}
+
+.seal{
+  position:absolute;
+  width:70px;
+  height:70px;
+  background:radial-gradient(circle,#ffd700,#f4b400);
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:700;
+  font-size:22px;
+  color:white;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(255,215,0,0.8);
+}
+
+/* SLIDESHOW */
+.slideshow{
+  position:absolute;
+  inset:0;
+  background:black;
+  opacity:0;
+  transition:opacity 1s ease;
+}
+
+.slideshow.show{
+  opacity:1;
+}
+
+.slide{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 1.5s ease-in-out;
+  animation:zoomAnim 8s ease forwards;
+}
+
+.slide.active{
+  opacity:1;
+}
+
+@keyframes zoomAnim{
+  from{transform:scale(1);}
+  to{transform:scale(1.08);}
+}
+
+/* CAPTION */
+.caption{
+  position:absolute;
+  bottom:80px;
+  width:100%;
+  text-align:center;
+  font-size:22px;
+  font-weight:600;
+  color:white;
+  text-shadow:0 5px 25px rgba(0,0,0,0.8);
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.slide.active .caption{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ICON EFFECT ẢNH ĐẦU */
+.icon{
+  position:absolute;
+  font-size:24px;
+  animation:float 5s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0); opacity:0;}
+  50%{opacity:1;}
+  100%{transform:translateY(-120px); opacity:0;}
+}
+
+.icon1{left:20%; bottom:50px;}
+.icon2{left:40%; bottom:80px;}
+.icon3{left:60%; bottom:60px;}
+.icon4{left:75%; bottom:70px;}
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+
+<div class="envelope" id="envelope">
+  <div class="body-env"></div>
+  <div class="seal" onclick="openShow()">H</div>
+</div>
+
+<div class="slideshow" id="slideshow">
+  <!-- ẢNH 1 -->
+  <div class="slide active" style="background-image:url('h1.jpg')">
+    <div class="caption">🎉 Happy Birthday Hòa 🎉</div>
+
+    <div class="icon icon1">🎈</div>
+    <div class="icon icon2">✨</div>
+    <div class="icon icon3">🎂</div>
+    <div class="icon icon4">💖</div>
+  </div>
+
+  <div class="slide" style="background-image:url('h2.jpg')">
+    <div class="caption">Tuổi mới thật nhiều niềm vui</div>
+  </div>
+
+  <div class="slide" style="background-image:url('h3.jpg')">
+    <div class="caption">Luôn giữ nụ cười rạng rỡ</div>
+  </div>
+
+  <div class="slide" style="background-image:url('h4.jpg')">
+    <div class="caption">Thành công trong mọi dự định</div>
+  </div>
+
+  <div class="slide" style="background-image:url('h5.jpg')">
+    <div class="caption">Hạnh phúc mỗi ngày</div>
+  </div>
+
+  <div class="slide" style="background-image:url('h6.jpg')">
+    <div class="caption">May mắn và bình an</div>
+  </div>
+
+  <div class="slide" style="background-image:url('h7.jpg')">
+    <div class="caption">Bay cao hơn nữa nhé</div>
+  </div>
+
+  <div class="slide" style="background-image:url('h8.jpg')">
+    <div class="caption">Luôn tỏa sáng theo cách riêng</div>
+  </div>
+
+  <div class="slide" style="background-image:url('h9.jpg')">
+    <div class="caption">Một hành trình mới bắt đầu</div>
+  </div>
+
+  <div class="slide" style="background-image:url('h10.jpg')">
+    <div class="caption">Chúc fen một tuổi mới nha 💕</div>
+  </div>
+</div>
+
+<audio id="music" src="audio.mp3"></audio>
+
+</div>
+
+<script>
+let envelope=document.getElementById("envelope");
+let slideshow=document.getElementById("slideshow");
+let slides=document.querySelectorAll(".slide");
+let music=document.getElementById("music");
+
+let current=0;
+let interval;
+
+function openShow(){
+  envelope.classList.add("hide");
+
+  setTimeout(()=>{
+    slideshow.classList.add("show");
+    music.play();
+    startSlideshow();
+  },800);
+}
+
+function startSlideshow(){
+  let slideTime = music.duration / slides.length;
+
+  interval = setInterval(()=>{
+    slides[current].classList.remove("active");
+    current++;
+    if(current < slides.length){
+      slides[current].classList.add("active");
+    }else{
+      clearInterval(interval);
+    }
+  }, slideTime*1000);
+}
+
+music.addEventListener("ended",()=>{
+  clearInterval(interval);
+});
+</script>
+
+</body>
+</html>
